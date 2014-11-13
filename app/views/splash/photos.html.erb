@@ -1,0 +1,5 @@
+<div class="row" id="photos">
+<% @photos.each do |el| %>
+  <%= render partial: 'photo', locals: { el: el } %>
+<% end %>
+</div>

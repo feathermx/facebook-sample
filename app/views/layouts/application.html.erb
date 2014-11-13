@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>App</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="<%= url_for action: :friends %>">Facebook Example</a>
+      </div>
+      <% if @auth_token.present? %>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li><a href="<%= url_for action: :friends %>">Friends</a></li>
+          <li><a href="<%= url_for action: :photos %>">Photos</a></li>
+          <li><a href="<%= url_for action: :logout %>">Logout</a></li>
+        </ul>
+      </div>
+      <% end %>
+    </div>
+  </nav>
+  <div id="container" class="container-fluid">
+    <%= yield %>
+  </div>
+</body>
+</html>

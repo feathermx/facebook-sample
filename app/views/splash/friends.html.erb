@@ -1,0 +1,5 @@
+<div class="row" id="friends">
+<% @friends.each do |el| %>
+  <%= render partial: 'friend', locals: { el: el } %>
+<% end %>
+</div>

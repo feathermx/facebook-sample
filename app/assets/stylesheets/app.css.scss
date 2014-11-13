@@ -1,0 +1,20 @@
+body{
+  background-color: #FAFAFA !important;
+}
+#container{
+  padding-top: 70px;
+}
+#friends{
+  padding: 10px 20px;
+  .friend{
+    .friend-name{
+      display: block;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .friend-btn{
+      margin: 8px 0 0 0;
+    }
+  }
+}
